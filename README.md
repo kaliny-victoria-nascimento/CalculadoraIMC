@@ -6,6 +6,7 @@ Aplicação dotnet console para cálculo do IMC.
 
 - Calcula o IMC
 - Apresenta a situação do resultado do IMC
+- Exibe o quanto o usuário precisa perder/ganhar para chegar em seu peso ideal
 
 ## Tecnologias
 

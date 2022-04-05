@@ -15,9 +15,9 @@ namespace CalculadoraIMC
             Console.WriteLine("Qual o seu peso em Kg? Ex: 59,3");
             float peso = Convert.ToSingle(Console.ReadLine());
 
-            double imc = peso / (altura * altura);
+            double imc = Math.Round(peso / (altura * altura), 2);
 
-            Console.WriteLine("{0} sua altura é {1} e seu peso é {2}", nome, altura, peso);
+            Console.WriteLine("{0} sua altura é {1} e seu peso é {2}kg", nome, altura, peso);
             Console.WriteLine("Seu IMC é: {0}", imc);
 
             if (imc < 17.0)
@@ -47,6 +47,19 @@ namespace CalculadoraIMC
             else if (imc > 40)
             {
                 Console.WriteLine("Obesidade III (mórbida)");
+            }
+
+            double MetaPeso = 0.00;
+
+            if (imc < 18.50)
+            {
+                MetaPeso = Math.Round((18.5 - imc), 2);
+                Console.WriteLine("Opa! Parece que você precisa ganhar {0}kg para chegar no seu peso ideal.", MetaPeso);
+            }
+            else if (imc > 24.99)
+            {
+                MetaPeso = Math.Round((imc - 24.99), 2);
+                Console.WriteLine("Eita! Verificamos que você precisa perder {0}kg para chegar no seu peso normal. Veja com um nutricionista para saber como!", MetaPeso);
             }
         }
     }
